@@ -10,8 +10,13 @@ const styles = makeStyles({
     }
 })
 
-function Profession() {
+function Profession({ getValue }) {
     const classes = styles();
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log(event);
+    }
 
     return (
         <div>
@@ -20,6 +25,7 @@ function Profession() {
                 <h2>What do you do?</h2>
                 <p>Select one that best describes you:</p>
             </div>
+            <form onSubmit={handleSubmit}>
                 <Grid
                     className={classes.grid}
                     container
@@ -61,6 +67,7 @@ function Profession() {
                         </div>
                     </Grid>
                 </Grid>
+            </form>
         </div>
     )
 }

@@ -29,18 +29,18 @@ function MasterForm({ props }) {
     }
 
     function prev() {
-        currentStep <= 1 ? setCurrentStep(1) : setCurrentStep(currentStep - 1); 
+        currentStep <= 1 ? setCurrentStep(1) : setCurrentStep(currentStep - 1);
     }
 
     //each form should be a form of its own,
-    //vakyes determined by each onSubmit function
+    //values determined by each onSubmit function
     return (
         <div className={classes.form}>
             <h2>Current step: {currentStep}</h2>
             <h2>Current profession: {profession}</h2>
-            <form onSubmit={handleEvent}>
-            <Profession />
-            </form>
+            <Profession
+                getValue={setProfession}
+            />
         </div>
     )
 
