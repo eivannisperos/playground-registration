@@ -18,6 +18,7 @@ function Profession({ getValue }) {
         console.log(event);
     }
 
+    //buttons should not be considered as forms
     return (
         <div>
             <div className="titles-form-component-header">
