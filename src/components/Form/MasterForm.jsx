@@ -14,8 +14,9 @@ const styles = makeStyles(theme => ({
 function MasterForm({ props }) {
     const classes = styles();
     const [currentStep, setCurrentStep] = useState(1);
-    const [profession, setProfession] = useState('');
+    const [profession, setProfession] = useState(null);
 
+    //perhaps should only keep track of steps?
     function handleEvent(event) {
         event.preventDefault();
         setCurrentStep(currentStep + 1);
@@ -31,10 +32,14 @@ function MasterForm({ props }) {
         currentStep <= 1 ? setCurrentStep(1) : setCurrentStep(currentStep - 1); 
     }
 
+    //each form should be a form of its own,
+    //vakyes determined by each onSubmit function
     return (
         <div className={classes.form}>
+            <h2>Current step: {currentStep}</h2>
+            <h2>Current profession: {profession}</h2>
             <form onSubmit={handleEvent}>
-                <Profession />
+            <Profession />
             </form>
         </div>
     )
