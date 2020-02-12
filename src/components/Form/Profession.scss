@@ -1,0 +1,46 @@
+.titles-form-component-header {
+    margin: 0em 1em;
+}
+
+.profession-select-container {
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-rounded-container {
+    display: flex;
+    justify-content: space-between;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    background-color: #F6F6F6;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+.img-rounded-container:hover {
+    background-color: #EEEEEE;
+}
+
+#physician {
+    background-image: url('../../assets/img/select-physician.png');
+}
+
+#student {
+    background-image: url('../../assets/img/student.png');
+}
+
+#hcp, #other {
+    background-image: url('../../assets/img/other.png');
+}
+
+
+.button-variant-2-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

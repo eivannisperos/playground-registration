@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import ProfessionSelection from './ProfessionSelection';
+import Profession from './Profession';
 
 const styles = makeStyles(theme => ({
     form: {
@@ -33,6 +34,7 @@ function MasterForm({ props }) {
     return (
         <div className={classes.form}>
             <form onSubmit={handleEvent}>
+                <Profession />
             </form>
         </div>
     )

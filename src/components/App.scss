@@ -21,13 +21,12 @@ body {
 
 * {
     font-family: "Proxima N W01 Reg", "Roboto", sans-serif;
-    margin: 0;
 }
 
 h1 {
     font-family: "Proxima N W01 Bold", "Roboto", sans-serif;
     font-size: 35px;
-    line-height: 42px;
+    line-height: 49px;
 }
 
 h2 {
@@ -37,10 +36,20 @@ h2 {
     margin: 0.5em 0;
 }
 
-h4 {
-    font-family: "Proxima N W01 Light";
-    font-size: 25px;
-    font-weight: lighter;
+h3 {
+    font-family: "Proxima N W01 Bold", "Roboto", sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0;
+}
+
+a {
+    font-family: "Proxima N W01 Light", "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+a:visited {
+    color: #0B0E1F;
 }
 
 // removes the whitespace underneath the image
@@ -57,10 +66,6 @@ button:hover {
     cursor: pointer;
 }
 
-p {
-    font-family: "Proxima N W01 Light";
-    font-size: 20px;
-}
 
 .register-container {
     width: 100%;
