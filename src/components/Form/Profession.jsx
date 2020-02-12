@@ -10,30 +10,29 @@ const styles = makeStyles({
     }
 })
 
-function Profession() {
+function Profession({ setProfession, nextStep }) {
     const classes = styles();
 
     return (
         <div>
-            <div className="titles-form-component-header">
-                <h1>Welcome to The Rounds!</h1>
-                <h2>What do you do?</h2>
+            <form onSubmit={nextStep}>
+                <h2>I consider myself a ...</h2>
                 <p>Select one that best describes you:</p>
-            </div>
                 <Grid
                     className={classes.grid}
                     container
-                    spacing={3}>
-                    <Grid item xs={3}>
+                    spacing={0}
+                    justify='space-between'>
+                    <Grid item xs={6} md={3}>
                         <div className="button-variant-2-btn">
-                            <button type="submit" value="physician">
+                            <button onClick={setProfession} type="submit" value="physician">
                                 <div id="physician" className="img-rounded-container" />
                                 <h3>Physician</h3>
                             </button>
                             <a href="#">Learn More</a>
                         </div>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={6} md={3}>
                         <div className="button-variant-2-btn">
                             <button>
                                 <div id="student" className="img-rounded-container" />
@@ -42,7 +41,7 @@ function Profession() {
                             <a href="#">Learn More</a>
                         </div>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={6} md={3}>
                         <div className="button-variant-2-btn">
                             <button>
                                 <div id="hcp" className="img-rounded-container" />
@@ -51,7 +50,7 @@ function Profession() {
                             <a href="#">Learn More</a>
                         </div>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item xs={6} md={3}>
                         <div className="button-variant-2-btn">
                             <button>
                                 <div id="other" className="img-rounded-container" />
@@ -61,8 +60,19 @@ function Profession() {
                         </div>
                     </Grid>
                 </Grid>
+            </form>
         </div>
     )
 }
 
 export default Profession;
+
+Profession.defaultProps = {
+    setProfession: () => null,
+    nextStep: () => null,
+}
+
+Profession.propTypes = {
+    setProfession: PropTypes.func,
+    nextStep: PropTypes.func,
+}

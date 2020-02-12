@@ -8,6 +8,7 @@ const styles = makeStyles(theme => ({
         width: '100%',
         maxWidth: '600px',
         margin: 'auto',
+        padding: '1em',
     }
 }));
 
@@ -20,7 +21,7 @@ function MasterForm({ props }) {
     function handleEvent(event) {
         event.preventDefault();
         setCurrentStep(currentStep + 1);
-        setProfession(profession);
+        setProfession(event.currentTarget.value);
     }
 
     // functions to keep track of the number of steps
@@ -29,18 +30,20 @@ function MasterForm({ props }) {
     }
 
     function prev() {
-        currentStep <= 1 ? setCurrentStep(1) : setCurrentStep(currentStep - 1); 
+        currentStep <= 1 ? setCurrentStep(1) : setCurrentStep(currentStep - 1);
     }
 
     //each form should be a form of its own,
     //vakyes determined by each onSubmit function
     return (
         <div className={classes.form}>
-            <h2>Current step: {currentStep}</h2>
-            <h2>Current profession: {profession}</h2>
-            <form onSubmit={handleEvent}>
-            <Profession />
-            </form>
+            <p>Current step: {currentStep}</p>
+            <p>Profession selected: {profession}</p>
+            <h1>Welcome to The Rounds!</h1>
+            <Profession
+                setProfession={handleEvent}
+                nextStep={next}
+            />
         </div>
     )
 
