@@ -16,6 +16,7 @@ function Profession({ setProfession, nextStep }) {
     return (
         <div>
             <form onSubmit={nextStep}>
+                <h1>Welcome to The Rounds!</h1>
                 <h2>I consider myself a ...</h2>
                 <p>Select one that best describes you:</p>
                 <Grid
