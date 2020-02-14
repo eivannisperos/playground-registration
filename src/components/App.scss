@@ -52,6 +52,16 @@ a:visited {
     color: #0B0E1F;
 }
 
+p {
+    font-family: "Proxima N W01 Reg", "Roboto", sans-serif;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+b {
+    font-family: "Proxima N W01 Bold", "Roboto", sans-serif;
+}
+
 // removes the whitespace underneath the image
 img {
     display: block;
