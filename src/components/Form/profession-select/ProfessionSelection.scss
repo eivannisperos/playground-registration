@@ -1,0 +1,43 @@
+.button-back {
+    padding: 0; 
+    margin-bottom: 4em;
+}
+
+.profession-container {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    padding: 1em 0;
+    cursor: pointer;
+    p {
+        margin: 0.2em 0;
+    }
+}
+
+.profession-container:hover {
+    .img-rounded-container {
+        transition: 0.2s ease-out;
+        background-color: #EEEEEE;
+    }
+    .select-indicator {
+        transform: translateX(50%);
+    }
+}
+
+.profession-description-container {
+    padding-left: 1em;
+}
+
+.profession-form {
+    width: 100%;
+    max-width: 800px;
+}
+
+.select-indicator {
+    transition: 0.2s ease-out;
+    margin-left: 0.5em;
+}
+
+.profession-title-container {
+    display: flex;
+}

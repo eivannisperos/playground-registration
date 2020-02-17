@@ -20,6 +20,7 @@ function Introduction({ nextStep }) {
                 value="start"
                 onClick={nextStep}
                 value="profession-select"
+                className="button-primary"
             >
                 Let's get started
             </button>
