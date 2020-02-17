@@ -18,13 +18,6 @@ function MasterForm({ props }) {
 
     console.log(profession + ' ' + 'Current step: ' + currentStep);
 
-    //perhaps should only keep track of steps?
-    function handleEvent(event) {
-        event.preventDefault();
-        setCurrentStep(currentStep + 1);
-        setProfession(event.currentTarget.value);
-    }
-
     // functions to keep track of the number of steps
     // do we even need this in the master form?
     // if we were to keep track of the initial number
@@ -37,20 +30,43 @@ function MasterForm({ props }) {
 
     function switchForms(event) {
         event.preventDefault();
+        console.log(event);
         // sets the pro
         setCurrentStep(event.currentTarget.value);
+    }
+
+    function setProfessionForm(event) {
+        event.preventDefault();
+        setProfession(event.currentTarget.value);
+        setCurrentStep('profession-process');
+    }
+
+    function determineProfessionForm(prof) {
+        switch (prof) {
+            case 'physician':
+                return <h1>Physician</h1>
+            case 'student':
+                return <h1>Medical Student</h1>
+            case 'hcp':
+                return <h1>Health Care Professional</h1>
+            case 'admin':
+                return <h1>Administrator</h1>
+        }
     }
 
     function displayForms(step) {
         switch (step) {
             case 'intro':
                 return <Introduction
-                nextStep={switchForms}
+                    nextStep={switchForms}
                 />
             case 'profession-select':
                 return <ProfessionSelection
-                prevStep={switchForms}
-                 />
+                    prevStep={switchForms}
+                    nextStep={setProfessionForm}
+                />
+            case 'profession-process':
+                return determineProfessionForm(profession)
             case 'finish':
                 return <h1>Finish</h1>
         }

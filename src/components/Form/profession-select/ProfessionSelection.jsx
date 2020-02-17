@@ -25,7 +25,11 @@ function ProfessionSelection({ nextStep, prevStep }) {
                 <Grid
                     item xs={12} md={6}
                 >
-                    <div className="profession-container">
+                    <button
+                        className="profession-container"
+                        onClick={nextStep}
+                        value="physician"
+                    >
                         <div>
                             <div id="physician" className="img-rounded-container" />
                         </div>
@@ -38,12 +42,16 @@ function ProfessionSelection({ nextStep, prevStep }) {
                                 I'm a trained and liscenced to practice medicine
                             </p>
                         </div>
-                    </div>
+                    </button>
                 </Grid>
                 <Grid
                     item xs={12} md={6}
                 >
-                    <div className="profession-container">
+                    <button
+                        className="profession-container"
+                        onClick={nextStep}
+                        value="student"
+                    >
                         <div>
                             <div id="student" className="img-rounded-container" />
                         </div>
@@ -56,12 +64,16 @@ function ProfessionSelection({ nextStep, prevStep }) {
                                 I'm currently attending medical school.
                             </p>
                         </div>
-                    </div>
+                    </button>
                 </Grid>
                 <Grid
                     item xs={12} md={6}
                 >
-                    <div className="profession-container">
+                    <button
+                        className="profession-container"
+                        onClick={nextStep}
+                        value="hcp"
+                    >
                         <div>
                             <div id="hcp" className="img-rounded-container" />
                         </div>
@@ -74,12 +86,15 @@ function ProfessionSelection({ nextStep, prevStep }) {
                                 I'm a professional within the medical space.
                             </p>
                         </div>
-                    </div>
+                    </button>
                 </Grid>
                 <Grid
                     item xs={12} md={6}
                 >
-                    <div className="profession-container">
+                    <button
+                        className="profession-container"
+                        onClick={nextStep}
+                        value="admin">
                         <div>
                             <div id="other" className="img-rounded-container" />
                         </div>
@@ -92,7 +107,7 @@ function ProfessionSelection({ nextStep, prevStep }) {
                                 I represent an organization.
                             </p>
                         </div>
-                    </div>
+                    </button>
                 </Grid>
             </Grid>
         </div>
