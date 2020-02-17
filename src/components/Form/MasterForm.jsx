@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Profession from './Profession';
-import PhysicianForm from './physician/PhysicianForm';
+import PhysicianForm from './PhysicianForm/PhysicianForm';
 import Introduction from '../Pages/Introduction';
-import ProfessionSelection from './profession-select/ProfessionSelection';
+import ProfessionSelection from './ProfessionSelection/ProfessionSelection';
 
 const styles = makeStyles(theme => ({
     form: {
@@ -45,11 +45,11 @@ function MasterForm({ props }) {
         switch (prof) {
             case 'physician':
                 return <h1>Physician</h1>
-            case 'student':
+            case 'medical student':
                 return <h1>Medical Student</h1>
-            case 'hcp':
+            case 'health care professional':
                 return <h1>Health Care Professional</h1>
-            case 'admin':
+            case 'administrator':
                 return <h1>Administrator</h1>
         }
     }
