@@ -13,8 +13,8 @@ const styles = makeStyles(theme => ({
 
 function MasterForm({ props }) {
     const classes = styles();
-    const [currentStep, setCurrentStep] = useState('profession-select');
-    const [profession, setProfession] = useState(null);
+    const [currentStep, setCurrentStep] = useState('profession-process');
+    const [profession, setProfession] = useState('physician');
 
     console.log(profession + ' ' + 'Current step: ' + currentStep);
 
@@ -30,8 +30,6 @@ function MasterForm({ props }) {
 
     function switchForms(event) {
         event.preventDefault();
-        console.log(event);
-        // sets the pro
         setCurrentStep(event.currentTarget.value);
     }
 
@@ -44,7 +42,9 @@ function MasterForm({ props }) {
     function determineProfessionForm(prof) {
         switch (prof) {
             case 'physician':
-                return <h1>Physician</h1>
+                return <PhysicianForm
+                    prevStep={switchForms}
+                />
             case 'medical student':
                 return <h1>Medical Student</h1>
             case 'health care professional':
@@ -75,9 +75,7 @@ function MasterForm({ props }) {
     //each form should be a form of its own,
     //values determined by each onSubmit function
     return (
-        <div>
-            {displayForms(currentStep)}
-        </div>
+        displayForms(currentStep)
     )
 
 }

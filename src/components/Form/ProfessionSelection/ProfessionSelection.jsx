@@ -3,20 +3,18 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import './ProfessionSelection.scss';
 
-import backButton from '../../../assets/img/left-arrow.svg';
 import ProfessionSelectButton from '../../Buttons/ProfessionSelectButton/ProfessionSelectButton';
+import BackButton from '../../Buttons/BackButton/BackButton';
+
+//TODO: convert scss file to a makeStyles object
 
 function ProfessionSelection({ nextStep, prevStep }) {
     return (
         <div className="profession-form">
-            <button
-                type="back"
-                className="button-back"
-                onClick={prevStep}
-                value="intro"
-            >
-                <img src={backButton} alt="A left arrow" />
-            </button>
+            <BackButton 
+                handleClick={prevStep}
+                destination='intro'
+            />
             <h2>I consider myself a ...</h2>
             <Grid
                 container
