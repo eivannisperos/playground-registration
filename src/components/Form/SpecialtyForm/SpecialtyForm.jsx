@@ -27,7 +27,7 @@ function SpecialtyForm({ next, saveSpec, savedSpec }) {
                 <ProfessionSelectButton
                     professionName='physician'
                 >
-                    I'm a trained and liscenced to practice medicine.
+                    I'm trained and liscenced to practice medicine.
                 </ProfessionSelectButton>
             </div>
 

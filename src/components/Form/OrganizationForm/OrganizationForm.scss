@@ -1,0 +1,16 @@
+.org-btn {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+
+    p {
+        font-size: 12px;
+        line-height: 17px;
+    }
+}
+
+.org-input-wrapper {
+    margin-bottom: 2em;
+}
