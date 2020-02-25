@@ -93,7 +93,7 @@ function OrganizationForm() {
     //             alignContent='space-between'>
     //             {
     //                 availOrgs.map(ao => {
-    //                     selectedOrgs.map(so => {
+    //                     selectedOrgs.map(so => {git add
     //                         if (so.orgName == ao.orgName) {
     //                             console.log(`${ao.orgName}`)
     //                             return (
