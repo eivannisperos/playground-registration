@@ -33,8 +33,6 @@ function OrganizationForm() {
         setSelectedOrgs([...selectedOrgs, event.currentTarget.value]);
     }
 
-    // render 
-
     function renderAvailableOrgs() {
         return (
             availOrgs.map(ao => (
@@ -86,126 +84,13 @@ function OrganizationForm() {
             </Grid>
         )
     }
-    // function renderAvailableOrgs() {
-    //     return (
-    //         <Grid
-    //             container
-    //             alignContent='space-between'>
-    //             {
-    //                 availOrgs.map(ao => {
-    //                     selectedOrgs.map(so => {git add
-    //                         if (so.orgName == ao.orgName) {
-    //                             console.log(`${ao.orgName}`)
-    //                             return (
-    //                                 <Grid
-    //                                     item xs={4}
-    //                                     key={orgList.key}
-    //                                 >
-    //                                     <button
-    //                                         className="org-btn"
-    //                                         value={ao.orgName}
-    //                                     >
-    //                                         <img src={ao.img} alt="The logo for CMA" />
-    //                                         <p>
-    //                                             {ao.orgName}
-    //                                         </p>
-    //                                     </button>
-    //                                 </Grid>
-    //                             )
-    //                         }
-    //                     })
-    //                 })
-    //             }
-    //         </Grid>
-    //     )
-    // }
 
 
     function getOrganiztion(event) {
         setOrg(event.target.value);
     }
 
-    //if the current button is organization is already selected,
-    //dont show it on avail orgs
-    // function addItem(event) {
-    //     event.preventDefault();
-    //     console.log(`Add to Selected: ${event.currentTarget.value}`)
-    //     const availableOrgs = availOrgs;
-    //     availableOrgs.filter(orgs => orgs.orgName =! event.currentTarget.value);
-    //     getAvailOrgs(availableOrgs);
-    //     // availOrgs.map(orgList => {
-    //     //     if (event.currentTarget.value == orgList.orgName) {
-    //     //         console.log('test')
-    //     //         addSelectedOrgs([...selectedOrgs, {
-    //     //             orgName: event.currentTarget.value,
-    //     //         }])
-    //     //     } else {
-
-    //     //     }
-    //     // })
-    //     console.log('New Available Orgs:');
-    //     console.log(availableOrgs);
-    // }
-
-    // function renderAvailableOrgs(orgs) {
-    //     return (
-    //         <Grid
-    //             container
-    //             alignContent='space-between'>
-    //             {
-    //                 orgs.map((orgList, index) => (
-    //                     <Grid
-    //                         item xs={4}
-    //                         key={orgList.key}
-    //                     >
-    //                         <button
-    //                             onClick={addItem}
-    //                             className="org-btn"
-    //                             value={orgList.orgName}
-    //                         >
-    //                             <img src={orgList.img} alt="The logo for CMA" />
-    //                             <p>
-    //                                 {orgList.orgName}
-    //                             </p>
-    //                         </button>
-    //                     </Grid>
-    //                 )
-    //                 )
-    //             }
-    //         </Grid>
-
-    //     )
-    // }
-
-    // function renderSelectedOrgs(orgs) {
-    //     return (
-    //         <Grid
-    //             container
-    //             alignContent='space-between'>
-    //             <h3>Selected Organizations</h3>
-    //             {
-    //                 orgs.map((orgList, index) => (
-    //                     <Grid
-    //                         item xs={4}
-    //                         key={index}
-    //                     >
-    //                         <button
-    //                             onClick={addItem}
-    //                             className="org-btn"
-    //                             value={orgList.orgName}
-    //                         >
-    //                             <img src={orgList.img} alt="The logo for CMA" />
-    //                             <p>
-    //                                 {orgList.orgName}
-    //                             </p>
-    //                         </button>
-    //                     </Grid>)
-    //                 )
-    //             }
-    //         </Grid>
-    //     )
-    // }
-
+  
     useEffect(() => {
         console.log(selectedOrgs)
     })
