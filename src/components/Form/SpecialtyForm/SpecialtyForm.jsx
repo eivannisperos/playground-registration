@@ -5,8 +5,12 @@ import Button from '../../Buttons/Button/Button';
 import './SpecialtyForm.scss';
 import Input from '../../Input/Input';
 
-function SpecialtyForm({ next, saveSpec, savedSpec }) {
-    const [specialty, setSpecialty] = useState('');
+function SpecialtyForm({ next, saveData, getData }) {
+    const [specialty, setSpecialty] = useState(getSavedData());
+
+    function getSavedData() {
+        return getData === '' ? '' : getData;
+    }
 
     function handleChange(event) {
         setSpecialty(event.target.value);
@@ -14,7 +18,7 @@ function SpecialtyForm({ next, saveSpec, savedSpec }) {
 
     function nextStep(event) {
         event.preventDefault();
-        saveSpec(specialty);
+        saveData(specialty);
         next();
     }
 
@@ -34,6 +38,7 @@ function SpecialtyForm({ next, saveSpec, savedSpec }) {
             <form className="specialty-form-container">
                 <h2>Specializing in ...</h2>
                 <Input
+                    name="specialty"
                     label="Select a specialty"
                     type="text"
                     list="physician-specialty"
@@ -68,10 +73,10 @@ export default SpecialtyForm;
 
 SpecialtyForm.defaultProps = {
     nextStep: () => null,
-    saveSpec: () => null,
+    saveData: () => null,
 }
 
 SpecialtyForm.propTypes = {
     nextStep: PropTypes.func,
-    saveSpec: PropTypes.func,
+    saveData: PropTypes.func,
 }

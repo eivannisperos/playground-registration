@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Profession from './Profession';
 import PhysicianForm from './PhysicianForm/PhysicianForm';
@@ -16,7 +16,11 @@ function MasterForm({ props }) {
     const [currentStep, setCurrentStep] = useState('profession-process');
     const [profession, setProfession] = useState('physician');
 
-    console.log(profession + ' ' + 'Current step: ' + currentStep);
+    const [masterData, setMasterData] = useState({})
+
+    useEffect(() => {
+        console.log(masterData)
+    })
 
     // functions to keep track of the number of steps
     // do we even need this in the master form?
@@ -35,7 +39,10 @@ function MasterForm({ props }) {
 
     function setProfessionForm(event) {
         event.preventDefault();
-        setProfession(event.currentTarget.value);
+        setMasterData({
+            ...masterData,
+            profession: event.currentTarget.value
+        });
         setCurrentStep('profession-process');
     }
 
@@ -44,6 +51,7 @@ function MasterForm({ props }) {
             case 'physician':
                 return <PhysicianForm
                     prevStep={switchForms}
+                    getData={masterData}
                 />
             case 'medical student':
                 return <h1>Medical Student</h1>
@@ -66,7 +74,7 @@ function MasterForm({ props }) {
                     nextStep={setProfessionForm}
                 />
             case 'profession-process':
-                return determineProfessionForm(profession)
+                return determineProfessionForm('physician');
             case 'finish':
                 return <h1>Finish</h1>
         }

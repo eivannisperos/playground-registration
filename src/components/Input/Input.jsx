@@ -5,7 +5,8 @@ import InputError from './InputError/InputError';
 
 
 //placeholder, list are optional props
-function Input({ label,
+function Input({ name,
+    label,
     value,
     type,
     setInputVal,
@@ -13,12 +14,14 @@ function Input({ label,
     onChange,
     placeholder,
     list,
-    required }) {
+    variant,
+    required,
+    errorMsg }) {
 
     function handleError() {
-        if (required && value=='') {
+        if (errorMsg.length > 0) {
             return (
-                <InputError>Required</InputError>
+            <InputError>{errorMsg}</InputError>
             )
         }
     }
@@ -30,33 +33,41 @@ function Input({ label,
                 {handleError()}
             </div>
             <input
-                className="custom-input"
+                name={name}
+                className={variant}
                 type={type}
                 list={list}
                 value={value}
                 onChange={getInputVal}
-                placeholder={placeholder} />
+                placeholder={placeholder}
+                autoComplete="on" />
         </div>
 
     )
 }
 
 Input.defaultProps = {
+    name: '',
     label: 'Type something',
     type: 'text',
     placeholder: 'Type something here',
     list: '',
+    variant: 'custom-input',
     required: false,
+    errorMsg: '',
 }
 
 Input.propTypes = {
-    lable: PropTypes.string,
+    name: PropTypes.string,
+    label: PropTypes.string,
     value: PropTypes.string.isRequired,
     type: PropTypes.string,
     placeholder: PropTypes.string,
     getInputVal: PropTypes.func.isRequired,
+    variant: PropTypes.string,
     list: PropTypes.node,
     required: PropTypes.bool,
+    errorMsg: PropTypes.string,
 }
 
 export default Input;

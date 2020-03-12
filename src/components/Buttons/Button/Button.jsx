@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.scss';
 
+//TODO
+//have a disabled state, cursor disabled
+
 function Button({ type, destination, children, variant, disabled, handleClick }) {
     return (
         <button
