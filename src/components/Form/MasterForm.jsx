@@ -13,9 +13,7 @@ const styles = makeStyles(theme => ({
 
 function MasterForm({ props }) {
     const classes = styles();
-    const [currentStep, setCurrentStep] = useState('profession-process');
-    const [profession, setProfession] = useState('physician');
-
+    const [currentStep, setCurrentStep] = useState('intro');
     const [masterData, setMasterData] = useState({})
 
     useEffect(() => {
@@ -74,7 +72,7 @@ function MasterForm({ props }) {
                     nextStep={setProfessionForm}
                 />
             case 'profession-process':
-                return determineProfessionForm('physician');
+                return determineProfessionForm(masterData.profession);
             case 'finish':
                 return <h1>Finish</h1>
         }

@@ -16,7 +16,7 @@ import CheckForm from '../CheckForm/CheckForm';
 // forms should reflect saved data stored here
 
 function PhysicianForm({ getData, prevStep, saveData }) {
-    const [currentStep, setCurrentStep] = useState(3);
+    const [currentStep, setCurrentStep] = useState(0);
 
     useEffect(() => {
         console.log(physicianData)
